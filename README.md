@@ -1,5 +1,3 @@
-![Build Status](https://github.com/KaterinaKorre/os-pizza-delivery-simulation/actions/workflows/ci-c.yml/badge.svg)
-
 # OS Pizza Delivery Simulation (POSIX Threads)
 
 This project simulates a pizza ordering and delivery system using POSIX threads (pthreads).  
