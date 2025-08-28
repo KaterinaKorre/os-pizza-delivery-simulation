@@ -1,56 +1,75 @@
-# Operating Systems – Pizza Delivery Simulation
+# OS Pizza Delivery Simulation (POSIX Threads)
 
-This project simulates a pizza delivery system using POSIX threads and is developed as part of the Operating Systems course at AUEB.
+This project simulates a pizza ordering and delivery system using POSIX threads (pthreads).  
+It was developed as part of the Operating Systems course at the Athens University of Economics and Business.
 
-## Course Info
+## Features
+- Concurrent order processing: each customer handled by a separate thread
+- Resource management: telephone operators, cooks, ovens, and deliverers
+- Synchronization using mutexes and condition variables
+- Randomized events: order size, pizza types, payment success/failure, delivery times
+- Statistics & reporting:
+  - Total income
+  - Pizzas sold per type
+  - Successful vs failed orders
+  - Average & maximum service time
+  - Average & maximum cooling time
 
-- Course: Operating Systems
-- Academic Year: 2024–2025
-
-## Project Description
-
-The simulation models a real-world pizza ordering and delivery workflow. It includes:
-
-- Order reception via telephone operators
-- Pizza preparation by cooks
-- Baking in ovens
-- Final delivery by delivery personnel
-
-All entities are synchronized using mutexes and condition variables to simulate concurrent access and contention over shared resources.
-
-## Implementation
-
-### Technologies:
+## Tech Stack
 - Language: C
 - Threads: POSIX (pthreads)
-- Timing: `clock_gettime()` for nanosecond precision
-- Compilation: `gcc -pthread`
+- Build Tool: GCC with `-pthread`
+- Error handling: custom utility functions (`utils.c/.h`)
+- Timing: `clock_gettime()`, `sleep()`
 
-### Key Concepts:
-- Thread creation & joining
-- Mutex locking/unlocking
-- Condition signaling & waiting
-- Time measurement for performance analysis
-- Error handling via utility wrappers
+## How to Build & Run
 
-## How to Build and Run
+### 1. Compile manually
+gcc src/p3210084-pizza.c src/utils.c -o run -pthread
+./run <Ncust> <Seed>
 
-### Option 1 – Run script
+Ncust: number of customers (threads to create)
+Seed: random seed for reproducibility
 
+Example:
+./run 100 10
+
+### 2. Run via helper script
 chmod +x scripts/test-res.sh
 ./scripts/test-res.sh
 
-This compiles the source code and runs the simulation with:
+This compiles and runs with 100 customers and seed 10.
 
-100 orders
+## Project Structure
+src/
+  pizza.c                # main simulation logic
+  pizza.h                # constants, structs, function prototypes
+  utils.c / utils.h      # error-handling helpers
+scripts/
+  test-res.sh            # compile & run script
 
-10-second time limit
+## Sample Output
+The order with number 3 was registered.
+The order with number 3 has finished the preparation in 12.00 minutes
+The order with number 3 delivered in 18.00 minutes
+-----------------------------------------------------
+| Total income: 450 euros
+| Number of margarita pizza: 12
+| Number of peperoni pizza: 9
+| Number of special pizza: 14
+| Number of successful orders: 29
+| Number of failed orders: 1
+| Max service time: 22.00 minutes
+| Average service time: 15.30 minutes
+| Max cold time: 6.00 minutes
+| Average cold time: 3.10 minutes
+-----------------------------------------------------
 
-### Option 2 – Manual compilation
+## What I Learned
 
-gcc src/p3210084-pizza.c src/utils.c -o run -pthread
-./run 100 10
-
-
-
+- Designing multi-threaded programs with shared resources
+- Using mutex locks and condition variables correctly
+- Handling randomized events in simulations
+- Collecting and reporting performance metrics
+- Writing clean, modular C code for a real-world workflow simulation
 
