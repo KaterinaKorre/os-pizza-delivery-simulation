@@ -25,20 +25,19 @@ It was developed as part of the Operating Systems course at the Athens Universit
 ## How to Build & Run
 
 ### 1. Compile manually
-gcc src/p3210084-pizza.c src/utils.c -o run -pthread
-./run <Ncust> <Seed>
+- gcc src/p3210084-pizza.c src/utils.c -o run -pthread
+- ./run <Ncust> <Seed>
 
-Ncust: number of customers (threads to create)
-Seed: random seed for reproducibility
+- Ncust: number of customers (threads to create)
+- Seed: random seed for reproducibility
 
-Example:
+# Example:
 ./run 100 10
 
 ### 2. Run via helper script
-chmod +x scripts/test-res.sh
-./scripts/test-res.sh
-
-This compiles and runs with 100 customers and seed 10.
+- chmod +x scripts/test-res.sh
+- ./scripts/test-res.sh
+- This compiles and runs with 100 customers and seed 10.
 
 ## Project Structure
 src/
@@ -52,7 +51,6 @@ scripts/
 - The order with number 3 was registered.
 - The order with number 3 has finished the preparation in 12.00 minutes
 - The order with number 3 delivered in 18.00 minutes
------------------------------------------------------
 - | Total income: 450 euros
 - | Number of margarita pizza: 12
 - | Number of peperoni pizza: 9
@@ -63,7 +61,6 @@ scripts/
 - | Average service time: 15.30 minutes
 - | Max cold time: 6.00 minutes
 - | Average cold time: 3.10 minutes
------------------------------------------------------
 
 ## What I Learned
 
