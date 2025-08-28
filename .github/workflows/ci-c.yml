@@ -1,0 +1,15 @@
+name: CI (C build)
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build
+        run: gcc src/p3210084-pizza.c src/utils.c -o run -pthread
+
+      - name: Smoke test
+        run: ./run 5 42
