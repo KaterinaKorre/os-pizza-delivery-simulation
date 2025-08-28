@@ -42,27 +42,27 @@ This compiles and runs with 100 customers and seed 10.
 
 ## Project Structure
 src/
-  pizza.c                # main simulation logic
-  pizza.h                # constants, structs, function prototypes
-  utils.c / utils.h      # error-handling helpers
+- pizza.c                # main simulation logic
+- pizza.h                # constants, structs, function prototypes
+- utils.c / utils.h      # error-handling helpers
 scripts/
-  test-res.sh            # compile & run script
+- test-res.sh            # compile & run script
 
 ## Sample Output
-The order with number 3 was registered.
-The order with number 3 has finished the preparation in 12.00 minutes
-The order with number 3 delivered in 18.00 minutes
+- The order with number 3 was registered.
+- The order with number 3 has finished the preparation in 12.00 minutes
+- The order with number 3 delivered in 18.00 minutes
 -----------------------------------------------------
-| Total income: 450 euros
-| Number of margarita pizza: 12
-| Number of peperoni pizza: 9
-| Number of special pizza: 14
-| Number of successful orders: 29
-| Number of failed orders: 1
-| Max service time: 22.00 minutes
-| Average service time: 15.30 minutes
-| Max cold time: 6.00 minutes
-| Average cold time: 3.10 minutes
+- | Total income: 450 euros
+- | Number of margarita pizza: 12
+- | Number of peperoni pizza: 9
+- | Number of special pizza: 14
+- | Number of successful orders: 29
+- | Number of failed orders: 1
+- | Max service time: 22.00 minutes
+- | Average service time: 15.30 minutes
+- | Max cold time: 6.00 minutes
+- | Average cold time: 3.10 minutes
 -----------------------------------------------------
 
 ## What I Learned
