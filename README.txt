@@ -73,11 +73,3 @@ The order with number 3 delivered in 18.00 minutes
 - Collecting and reporting performance metrics
 - Writing clean, modular C code for a real-world workflow simulation
 
-## Continuous Integration
-
-This repo includes a GitHub Actions workflow (.github/workflows/ci-c.yml) that:
-
-Builds the project with GCC + -pthread
-
-Runs a smoke test (./run 5 42)
-
